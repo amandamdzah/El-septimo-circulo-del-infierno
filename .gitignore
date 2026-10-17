@@ -1,0 +1,7 @@
+.venv
+src/
+.python-version
+pyproject.toml
+*.png
+uv.lock
+pyrightconfig.json
