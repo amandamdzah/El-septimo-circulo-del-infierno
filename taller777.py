@@ -62,7 +62,7 @@ def inicializar_parametros(H, seed):
     np.random.seed(seed)
     params = {
         'w1': np.random.randn(1, H) * np.sqrt(2.0 / 1.0),
-        'b1': np.random.uniform(-1.8, 1.8, size=(1, H)),
+        'b1': np.random.uniform(-3.0, 3.0, size=(1, H)),
         'w2': np.random.randn(H, 1) * np.sqrt(2.0 / H),
         'b2': np.zeros((1, 1))
     }
@@ -143,7 +143,7 @@ plt.scatter(x, y, color='lightgray', alpha=0.5, s=18, label='Datos ruidosos')
 plt.plot(x, y_teorica, 'k--', linewidth=1.8, label='Función teórica')
 
 for sem, col in zip(semillas_t3, colores_t3):
-    y_pred, hist_j = entrenar_modelo(x, y, H=28, alpha=0.04, epocas=7000, seed=sem)
+    y_pred, hist_j = entrenar_modelo(x, y, H=40, alpha=0.04, epocas=7000, seed=sem)
     plt.plot(x, y_pred, color=col, linewidth=2, label=f'Semilla {sem} ($J={hist_j[-1]:.4f}$)')
 
 plt.title('Análisis de Mínimos Locales (5 Semillas Aleatorias)')
