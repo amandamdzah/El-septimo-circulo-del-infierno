@@ -143,7 +143,7 @@ plt.scatter(x, y, color='lightgray', alpha=0.5, s=18, label='Datos ruidosos')
 plt.plot(x, y_teorica, 'k--', linewidth=1.8, label='Función teórica')
 
 for sem, col in zip(semillas_t3, colores_t3):
-    y_pred, hist_j = entrenar_modelo(x, y, H=40, alpha=0.04, epocas=7000, seed=sem)
+    y_pred, hist_j = entrenar_modelo(x, y, H=30, alpha=0.04, epocas=7000, seed=sem)
     plt.plot(x, y_pred, color=col, linewidth=2, label=f'Semilla {sem} ($J={hist_j[-1]:.4f}$)')
 
 plt.title('Análisis de Mínimos Locales (5 Semillas Aleatorias)')
